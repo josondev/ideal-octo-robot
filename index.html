@@ -16,14 +16,14 @@
                 <a href="#home">Rex Joson Deva</a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-target="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-target="about">About</a></li>
+                <li><a href="#projects" class="nav-link" data-target="projects">Projects</a></li>
+                <li><a href="#skills" class="nav-link" data-target="skills">Skills</a></li>
+                <li><a href="#education" class="nav-link" data-target="education">Education</a></li>
+                <li><a href="#achievements" class="nav-link" data-target="achievements">Achievements</a></li>
+                <li><a href="#certifications" class="nav-link" data-target="certifications">Certifications</a></li>
+                <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
             </ul>
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
@@ -38,11 +38,6 @@
         <div class="ai-background"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-image">
-                    <div class="profile-img-container">
-                        <img src="image.jpg" alt="Rex Joson Deva" class="profile-img">
-                    </div>
-                </div>
                 <div class="hero-text">
                     <h1 class="hero-name">Rex Joson Deva</h1>
                     <h2 class="hero-title">AI/ML Engineer</h2>
@@ -93,8 +88,8 @@
                         </div>
                     </div>
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn--primary">View Projects</a>
-                        <a href="#contact" class="btn btn--outline">Get In Touch</a>
+                        <button class="btn btn--primary" onclick="scrollToSection('projects')">View Projects</button>
+                        <button class="btn btn--outline" onclick="scrollToSection('contact')">Get In Touch</button>
                     </div>
                 </div>
             </div>
@@ -137,13 +132,35 @@
                         <span class="project-date">September 2024</span>
                     </div>
                     <p class="project-description">
-                        Developed a machine learning model achieving 83% accuracy using ensemble methods including Boosting and Bagging. Implemented on large-scale datasets for content analysis using Python, Scikit-Learn, and LightGBM.
+                        Developed a machine learning model achieving 83% accuracy using ensemble methods. Built for content analysis using Python and advanced ML algorithms.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Scikit-Learn</span>
                         <span class="tech-tag">LightGBM</span>
                         <span class="tech-tag">Machine Learning</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">
+                            <a href="https://github.com/josondev/Spark-Explorer" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                </svg>
+                                Spark Decision Tree
+                            </a>
+                        </h3>
+                        <span class="project-date">Additional Project</span>
+                    </div>
+                    <p class="project-description">
+                        A decision tree classifier built with Apache Spark MLlib to predict hiring decisions based on candidate attributes.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Apache Spark</span>
+                        <span class="tech-tag">MLlib</span>
+                        <span class="tech-tag">Decision Trees</span>
                     </div>
                 </div>
 
@@ -154,13 +171,13 @@
                                 <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                                 </svg>
-                                Multi-Agent Task Solving System
+                                Agentic AI
                             </a>
                         </h3>
                         <span class="project-date">July 2025</span>
                     </div>
                     <p class="project-description">
-                        Built a multi-agent system with collaborative AI agents using MCP for tool integration and LangGraph for orchestration. Integrated multiple AI providers (Groq, TogetherAI, Langgraph). The entire system is orchestrated using LangGraph and operates based on a voting system by multiple agents and a reflection step for its validation of answers is included.
+                        Advanced multi-agent system where <strong>multiple agents participate</strong> in collaborative problem-solving. The system uses <strong>majority voting process</strong> to select the final answer, with <strong>each agent providing explicit reasoning</strong> for their responses. A dedicated <strong>reflection step validates accuracy and consistency</strong> of the final output.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Multi-Agent Systems</span>
@@ -173,39 +190,17 @@
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">
-                            <a href="https://github.com/josondev/friendly-octo-fishstick" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                Multipurpose Chatbot
-                            </a>
-                        </h3>
-                        <span class="project-date">May 2024</span>
-                    </div>
-                    <p class="project-description">
-                        Developed a chatbot using Lyzr AI with capabilities for text generation, summarization, and voice output. Integrated PDF processing, website scraping, and intelligent Q&A functionality to streamline workflows.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Lyzr AI</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Voice Processing</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">
                             <a href="https://github.com/josondev/Mental-Health-Chatbot" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                                 </svg>
-                                Mental Health Support Chatbot
+                                Mental Health Chatbot
                             </a>
                         </h3>
                         <span class="project-date">May 2025</span>
                     </div>
                     <p class="project-description">
-                        Created a specialized chatbot using Google Gemini Flash with a RAG architecture trained on mental health datasets. Implemented vector search with PineconeDB to deliver contextually appropriate and sensitive responses.
+                        Created a specialized chatbot using Google Gemini Flash with RAG architecture trained on mental health datasets.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Google Gemini</span>
@@ -227,7 +222,7 @@
                         <span class="project-date">July 2024</span>
                     </div>
                     <p class="project-description">
-                        Created an AI Based Weather Analyzer and Crop Suggestor keeping farmers in mind. Implemented the project using Groq and Langchain for AI side and used OpenWeatherMap API for Weather and Google Maps API key for location whereabouts.
+                        AI-powered weather analyzer and crop suggestion system designed for farmers using Groq and LangChain.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Groq</span>
@@ -239,22 +234,22 @@
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">
-                            <a href="https://github.com/josondev/Spark-Explorer" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <a href="https://github.com/josondev/friendly-octo-fishstick" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                                 </svg>
-                                Spark Decision Tree
+                                Multipurpose Chat
                             </a>
                         </h3>
-                        <span class="project-date">2024</span>
+                        <span class="project-date">May 2024</span>
                     </div>
                     <p class="project-description">
-                        A decision tree implementation in Apache Spark for big data processing and machine learning tasks.
+                        Multipurpose chatbot with text generation, summarization, and voice output capabilities using Lyzr AI.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">Apache Spark</span>
-                        <span class="tech-tag">MLlib</span>
-                        <span class="tech-tag">Decision Trees</span>
+                        <span class="tech-tag">Lyzr AI</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Voice Processing</span>
                     </div>
                 </div>
             </div>
@@ -279,11 +274,10 @@
                     <h3 class="skill-category-title">AI/ML Technologies</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Generative AI</span>
-                        <span class="skill-tag">Agentic AI</span>
+                        <span class="skill-tag">Multi-Agent Systems</span>
                         <span class="skill-tag">Machine Learning</span>
                         <span class="skill-tag">Deep Learning</span>
                         <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Reinforcement Learning</span>
                     </div>
                 </div>
 
@@ -295,7 +289,6 @@
                         <span class="skill-tag">Scikit-Learn</span>
                         <span class="skill-tag">Pandas</span>
                         <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
                     </div>
                 </div>
 
@@ -304,23 +297,9 @@
                     <div class="skill-tags">
                         <span class="skill-tag">OpenAI</span>
                         <span class="skill-tag">Hugging Face</span>
-                        <span class="skill-tag">Google AI</span>
-                        <span class="skill-tag">Groq</span>
-                        <span class="skill-tag">NVIDIA AI</span>
                         <span class="skill-tag">LangChain</span>
                         <span class="skill-tag">LangGraph</span>
-                        <span class="skill-tag">PhiData</span>
-                        <span class="skill-tag">Agno</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PineconeDB</span>
-                        <span class="skill-tag">FAISS</span>
-                        <span class="skill-tag">Chroma</span>
+                        <span class="skill-tag">Groq</span>
                     </div>
                 </div>
             </div>
@@ -344,97 +323,6 @@
                     <div class="education-content">
                         <h3 class="education-institution">Indian Institute of Technology Madras</h3>
                         <p class="education-degree">Bachelor of Science - Data Science and Applications</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            
-            <!-- Completed Courses -->
-            <div class="cert-section">
-                <h3 class="cert-section-title">Completed Courses</h3>
-                
-                <div class="cert-item">
-                    <div class="cert-content">
-                        <h4 class="cert-name">Complete Generative AI With Langchain and HuggingFace</h4>
-                        <p class="cert-provider">Udemy</p>
-                        <div class="cert-actions">
-                            <span class="cert-status completed">Completed</span>
-                            <a href="https://drive.google.com/file/d/11nDxYTpXgxZsLl-yCdt2XX9r_aWDjjqu/view?usp=drive_link" target="_blank" class="cert-link">View Certificate</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cert-item">
-                    <div class="cert-content">
-                        <h4 class="cert-name">Python Programming Certificate</h4>
-                        <p class="cert-provider">HackerRank</p>
-                        <div class="cert-actions">
-                            <span class="cert-status completed">Completed</span>
-                            <a href="https://drive.google.com/file/d/1vmdtxMLiDPE9PVFnQzGA_GuPork4ZhWK/view?usp=sharing" target="_blank" class="cert-link">View Certificate</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cert-item">
-                    <div class="cert-content">
-                        <h4 class="cert-name">Introduction to Large Language Models</h4>
-                        <p class="cert-provider">NPTEL</p>
-                        <div class="cert-actions">
-                            <span class="cert-status completed">Completed</span>
-                            <a href="https://drive.google.com/file/d/1mawbzhI_br7rnuRy9KpRB_m3zVVLcpYw/view?usp=sharing" target="_blank" class="cert-link">View Certificate</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cert-item">
-                    <div class="cert-content">
-                        <h4 class="cert-name">Fundamentals of Agents</h4>
-                        <p class="cert-provider">Hugging Face</p>
-                        <div class="cert-actions">
-                            <span class="cert-status completed">Completed</span>
-                            <a href="https://drive.google.com/file/d/1YdS-2qGn3rVf3OGEI7EwUmerDTxDLK5n/view?usp=sharing" target="_blank" class="cert-link">View Certificate</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ongoing Courses -->
-            <div class="cert-section">
-                <h3 class="cert-section-title">Ongoing Courses</h3>
-                
-                <div class="cert-item ongoing">
-                    <div class="cert-content">
-                        <h4 class="cert-name">Machine Learning, Data Science and Generative AI with Python</h4>
-                        <p class="cert-provider">Udemy</p>
-                        <div class="cert-actions">
-                            <span class="cert-status ongoing">Ongoing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cert-item ongoing">
-                    <div class="cert-content">
-                        <h4 class="cert-name">Complete Machine Learning A-Z</h4>
-                        <p class="cert-provider">Udemy</p>
-                        <div class="cert-actions">
-                            <span class="cert-status ongoing">Ongoing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cert-item ongoing">
-                    <div class="cert-content">
-                        <h4 class="cert-name">Artificial Intelligence A-Z 2025: Agentic AI, Gen AI, and RL</h4>
-                        <p class="cert-provider">Course Provider</p>
-                        <div class="cert-actions">
-                            <span class="cert-status ongoing">Ongoing</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -465,6 +353,42 @@
                 <div class="achievement-item">
                     <h3>Academic Excellence</h3>
                     <p>Awarded top grade in Python Programming From IIT Madras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <h3 class="certification-title">Generative AI with LangChain & HuggingFace</h3>
+                    <p class="certification-provider">Udemy</p>
+                    <span class="status status--success">Completed</span>
+                    <a href="https://drive.google.com/file/d/11nDxYTpXgxZsLl-yCdt2XX9r_aWDjjqu/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="certificate-link btn btn--primary btn--sm">View Certificate</a>
+                </div>
+
+                <div class="certification-item">
+                    <h3 class="certification-title">Python Certificate – HackerRank</h3>
+                    <p class="certification-provider">HackerRank</p>
+                    <span class="status status--success">Completed</span>
+                    <a href="https://drive.google.com/file/d/1vmdtxMLiDPE9PVFnQzGA_GuPork4ZhWK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="certificate-link btn btn--primary btn--sm">View Certificate</a>
+                </div>
+
+                <div class="certification-item">
+                    <h3 class="certification-title">Introduction to LLMs – NPTEL</h3>
+                    <p class="certification-provider">NPTEL</p>
+                    <span class="status status--success">Completed</span>
+                    <a href="https://drive.google.com/file/d/1mawbzhI_br7rnuRy9KpRB_m3zVVLcpYw/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="certificate-link btn btn--primary btn--sm">View Certificate</a>
+                </div>
+
+                <div class="certification-item">
+                    <h3 class="certification-title">Fundamentals of Agents – HuggingFace</h3>
+                    <p class="certification-provider">Hugging Face</p>
+                    <span class="status status--success">Completed</span>
+                    <a href="https://drive.google.com/file/d/1YdS-2qGn3rVf3OGEI7EwUmerDTxDLK5n/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="certificate-link btn btn--primary btn--sm">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -539,5 +463,21 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Simple scroll to section function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const navbar = document.getElementById('navbar');
+                const offset = navbar ? navbar.offsetHeight + 20 : 80;
+                const elementTop = element.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: elementTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
 </body>
 </html>
