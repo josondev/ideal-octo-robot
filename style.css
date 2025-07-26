@@ -1,4 +1,4 @@
-/* Reset and CSS Variables for Dark Mode */
+/* CSS Variables for Dark Mode */
 :root {
     --bg-color: #fff;
     --text-color: #333;
@@ -46,7 +46,7 @@ body {
     padding: 0 20px;
 }
 
-/* Enhanced Responsive Navigation */
+/* Fixed Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -66,7 +66,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    position: relative;
 }
 
 .nav-logo a {
@@ -85,19 +84,14 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
-    margin: 0;
-    padding: 0;
-    transition: all 0.3s ease;
 }
 
 .nav-link {
     color: var(--nav-text);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
     transition: color 0.3s ease;
     position: relative;
-    padding: 0.5rem 0;
 }
 
 .nav-link:hover {
@@ -109,7 +103,7 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     background: var(--primary-color);
     transition: width 0.3s ease;
@@ -119,56 +113,36 @@ body {
     width: 100%;
 }
 
-/* Navigation Controls */
+/* Navigation Controls - Dark Mode Toggle */
 .nav-controls {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-/* Dark Mode Toggle */
 .theme-toggle {
-    background: none;
-    border: 2px solid var(--primary-color);
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1rem;
-    position: relative;
-    overflow: hidden;
+    font-size: 1.2rem;
 }
 
 .theme-toggle:hover {
-    background: var(--primary-color);
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(22, 160, 133, 0.4);
 }
 
-.theme-toggle .sun-icon,
-.theme-toggle .moon-icon {
-    transition: all 0.3s ease;
-}
-
-[data-theme="dark"] .theme-toggle .sun-icon {
-    opacity: 0;
-    transform: rotate(180deg);
-}
-
-[data-theme="light"] .theme-toggle .moon-icon,
-body:not([data-theme]) .theme-toggle .moon-icon {
-    opacity: 0;
-    transform: rotate(-180deg);
-}
-
-/* Mobile Menu Toggle */
 .nav-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    padding: 0.25rem;
 }
 
 .nav-toggle span {
@@ -176,87 +150,10 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     height: 3px;
     background: var(--nav-text);
     margin: 3px 0;
-    transition: all 0.3s ease;
-    transform-origin: center;
+    transition: 0.3s;
 }
 
-.nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Enhanced Responsive Breakpoints */
-@media (max-width: 1024px) {
-    .nav-menu {
-        gap: 1.5rem;
-    }
-    
-    .nav-link {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        height: 50px;
-    }
-    
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: 50px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 50px);
-        background: var(--nav-bg);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 2rem 0;
-        gap: 2rem;
-        transition: left 0.3s ease;
-        box-shadow: 0 2px 10px var(--shadow);
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-link {
-        font-size: 1.1rem;
-        padding: 1rem 0;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .theme-toggle {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-container {
-        padding: 0 15px;
-    }
-    
-    .nav-logo a {
-        font-size: 1.2rem;
-    }
-}
-
-/* Hero Section with Dynamic Padding */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -267,7 +164,6 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     padding-top: 80px;
 }
 
-/* Dark Mode Hero Adjustments */
 [data-theme="dark"] .hero {
     background: linear-gradient(135deg, #000000 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #000000 100%);
 }
@@ -514,7 +410,7 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     font-size: 0.9rem;
 }
 
-/* Section Styles with Dark Mode */
+/* Section Styles */
 .section-title {
     font-size: 2.5rem;
     text-align: center;
@@ -551,9 +447,10 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     color: var(--text-color);
+    opacity: 0.9;
 }
 
-/* Projects Section with Dark Mode */
+/* Projects Section */
 .projects {
     padding: 80px 0;
     background: var(--bg-color);
@@ -669,62 +566,6 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     color: #fff;
 }
 
-/* Responsive Hero Section */
-@media (max-width: 768px) {
-    .hero {
-        padding-top: 60px;
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-name {
-        font-size: 2.2rem;
-        margin-top: 2rem;
-    }
-
-    .hero-title {
-        font-size: 1.4rem;
-    }
-
-    .degree-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-contact {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-img {
-        width: 140px;
-        height: 140px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-name {
-        font-size: 2rem;
-    }
-
-    .hero-title {
-        font-size: 1.2rem;
-    }
-
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-/* Continue with existing sections but add dark mode variables... */
 /* Skills Section */
 .skills {
     padding: 80px 0;
@@ -779,9 +620,6 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     transform: scale(1.05);
 }
 
-/* Continue with other sections using var(--color-variables)... */
-/* Education, Certifications, etc. would follow the same pattern */
-
 /* Education Section */
 .education {
     padding: 80px 0;
@@ -827,108 +665,122 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     font-size: 1.1rem;
 }
 
-/* Certifications Section */
+/* FIXED Certifications Section */
 .certifications {
     padding: 80px 0;
     background: var(--secondary-bg);
 }
 
 .cert-section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .cert-section-title {
-    color: var(--text-color);
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    display: inline-block;
-}
-
-.cert-item {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px var(--shadow);
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.cert-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px var(--shadow);
-}
-
-.cert-item.ongoing {
-    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-}
-
-.cert-content {
-    padding: 2rem;
-    color: #fff;
-}
-
-.cert-name {
-    font-size: 1.3rem;
+    color: #4fa8db;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* 2x2 Grid for Completed Courses */
+.completed-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* 3-Column Row for Ongoing Courses */
+.ongoing-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Certificate Cards */
+.cert-card {
+    background: #2d3748;
     color: #fff;
-    line-height: 1.4;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cert-card.ongoing {
+    background: #34495e;
+}
+
+.cert-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    flex-grow: 1;
 }
 
 .cert-provider {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    color: #9ca3af;
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
     font-style: italic;
 }
 
-.cert-actions {
+.cert-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
+    margin-top: auto;
 }
 
-.cert-status {
-    padding: 0.5rem 1.2rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
+/* Certificate Badges */
+.cert-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.cert-status.completed {
-    background: #27ae60;
+.cert-badge.completed {
+    background: #10b981;
     color: #fff;
-    box-shadow: 0 3px 10px rgba(39, 174, 96, 0.4);
 }
 
-.cert-status.ongoing {
-    background: #f39c12;
+.cert-badge.ongoing {
+    background: #f59e0b;
     color: #fff;
-    box-shadow: 0 3px 10px rgba(243, 156, 18, 0.4);
 }
 
-.cert-link {
-    background: var(--primary-color);
+/* Certificate Buttons */
+.cert-btn {
+    background: #4fa8db;
     color: #fff;
     text-decoration: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(22, 160, 133, 0.4);
+    white-space: nowrap;
 }
 
-.cert-link:hover {
-    background: #138d75;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(22, 160, 133, 0.6);
+.cert-btn:hover {
+    background: #3b92c7;
+    transform: translateY(-1px);
 }
 
 /* Achievements Section */
@@ -1087,27 +939,115 @@ body:not([data-theme]) .theme-toggle .moon-icon {
     color: #bdc3c7;
 }
 
-/* Mobile Responsive Adjustments */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .completed-courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .ongoing-courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .cert-content {
-        padding: 1.5rem;
+    .nav-toggle {
+        display: flex;
     }
     
-    .cert-name {
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 2px 10px var(--shadow);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
         font-size: 1.1rem;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        padding-top: 70px;
     }
     
-    .cert-actions {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-name {
+        font-size: 2.2rem;
+        margin-top: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.4rem;
+    }
+
+    .degree-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-contact {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .completed-courses-grid,
+    .ongoing-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .cert-card {
+        padding: 1.5rem;
+        min-height: 200px;
+    }
+    
+    .cert-title {
+        font-size: 1rem;
+    }
+    
+    .cert-bottom {
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
     }
     
-    .cert-link {
+    .cert-btn {
         text-align: center;
         width: 100%;
     }
-    
+
     .education-item {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1119,23 +1059,33 @@ body:not([data-theme]) .theme-toggle .moon-icon {
         padding: 0 15px;
     }
 
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
     .section-title {
         font-size: 2rem;
     }
 
-    .cert-content {
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cert-card {
         padding: 1.2rem;
+        min-height: 180px;
     }
     
-    .cert-name {
-        font-size: 1rem;
+    .cert-title {
+        font-size: 0.95rem;
     }
     
     .cert-provider {
-        font-size: 0.9rem;
-    }
-    
-    .cert-section-title {
-        font-size: 1.5rem;
+        font-size: 0.85rem;
     }
 }
