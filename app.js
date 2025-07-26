@@ -39,7 +39,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add animation on scroll for elements
+// ENHANCED Animation on scroll for elements
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -93,10 +93,10 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add some interactive effects
+// ENHANCED Interactive effects for buttons
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px) scale(1.05)';
+        this.style.transform = 'translateY(-3px) scale(1.05)';
     });
     
     btn.addEventListener('mouseleave', function() {
@@ -104,7 +104,7 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
 });
 
-// Profile image hover effect
+// ENHANCED Profile image hover effect
 const profileImg = document.querySelector('.profile-img');
 if (profileImg) {
     profileImg.addEventListener('mouseenter', function() {
@@ -115,3 +115,41 @@ if (profileImg) {
         this.style.filter = 'brightness(1) contrast(1)';
     });
 }
+
+// FIXED Project Card Hover Effects - This solves your "selector not moving" issue
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        // Force the hover state
+        this.style.transform = 'translateY(-15px) scale(1.02)';
+        this.style.boxShadow = '0 25px 60px rgba(0, 0, 0, 0.2)';
+        this.style.borderColor = '#16a085';
+        
+        // Animate tech tags
+        const techTags = this.querySelectorAll('.tech-tag');
+        techTags.forEach(tag => {
+            tag.style.background = '#16a085';
+            tag.style.color = '#fff';
+            tag.style.transform = 'translateY(-2px)';
+        });
+        
+        // Animate GitHub icon
+        const githubIcon = this.querySelector('.github-icon');
+        if (githubIcon) {
+            githubIcon.style.transform = 'rotate(15deg) scale(1.1)';
+        }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        // Reset to normal state
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
+        this.style.borderColor = '#eee';
+        
+        // Reset tech tags (except for featured cards)
+        if (!this.classList.contains('featured')) {
+            const techTags = this.querySelectorAll('.tech-tag');
+            techTags.forEach(tag => {
+                tag.style.background = '#e9ecef';
+                tag.style.color = '#495057';
+                tag.style.transform = 'translateY(0)';
+            });
