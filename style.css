@@ -103,14 +103,14 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
+/* Modern AI Neural Network Background Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #1e3a8a 75%, #0f172a 100%);
 }
 
 .ai-background {
@@ -119,16 +119,35 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(120, 250, 200, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 120, 200, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.3) 0%, transparent 50%);
-    animation: float 6s ease-in-out infinite;
+    background-image: 
+        radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #8b5cf6 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #06b6d4 0%, transparent 30%);
+    opacity: 0.3;
+    animation: neuralPulse 4s ease-in-out infinite alternate;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+.ai-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(45deg, transparent 40%, rgba(59, 130, 246, 0.1) 50%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, rgba(139, 92, 246, 0.1) 50%, transparent 60%);
+    animation: dataFlow 6s linear infinite;
+}
+
+@keyframes neuralPulse {
+    0% { opacity: 0.2; transform: scale(1); }
+    100% { opacity: 0.4; transform: scale(1.05); }
+}
+
+@keyframes dataFlow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .hero-content {
