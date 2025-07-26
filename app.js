@@ -153,3 +153,12 @@ document.querySelectorAll('.project-card').forEach(card => {
                 tag.style.color = '#495057';
                 tag.style.transform = 'translateY(0)';
             });
+        }
+        
+        // Reset GitHub icon
+        const githubIcon = this.querySelector('.github-icon');
+        if (githubIcon) {
+            githubIcon.style.transform = 'rotate(0deg) scale(1)';
+        }
+    });
+});
