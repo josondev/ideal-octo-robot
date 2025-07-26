@@ -665,10 +665,10 @@ body {
     font-size: 1.1rem;
 }
 
-/* FIXED Certifications Section */
+/* Certifications Section - Final Perfect Alignment */
 .certifications {
     padding: 80px 0;
-    background: var(--secondary-bg);
+    background: var(--secondary-bg, #f8f9fa);
 }
 
 .cert-section {
@@ -676,32 +676,33 @@ body {
 }
 
 .cert-section-title {
-    color: #4fa8db;
-    font-size: 1.4rem;
+    color: #0ea5e9;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: left;
+    border-bottom: none;
 }
 
 /* 2x2 Grid for Completed Courses */
-.completed-courses-grid {
+.completed-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 /* 3-Column Row for Ongoing Courses */
-.ongoing-courses-grid {
+.ongoing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Certificate Cards */
-.cert-card {
+/* Certificate Items */
+.cert-item {
     background: #2d3748;
-    color: #fff;
+    color: #ffffff;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -712,17 +713,17 @@ body {
     min-height: 220px;
 }
 
-.cert-card:hover {
+.cert-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.cert-card.ongoing {
-    background: #34495e;
+.cert-item.ongoing {
+    background: #374151;
 }
 
 .cert-title {
-    color: #fff;
+    color: #ffffff;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.3;
@@ -737,7 +738,7 @@ body {
     font-style: italic;
 }
 
-.cert-bottom {
+.cert-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -745,30 +746,31 @@ body {
     margin-top: auto;
 }
 
-/* Certificate Badges */
-.cert-badge {
+/* Status Badges */
+.cert-status {
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
-.cert-badge.completed {
+.cert-status.completed {
     background: #10b981;
-    color: #fff;
+    color: #ffffff;
 }
 
-.cert-badge.ongoing {
+.cert-status.ongoing {
     background: #f59e0b;
-    color: #fff;
+    color: #ffffff;
 }
 
 /* Certificate Buttons */
-.cert-btn {
-    background: #4fa8db;
-    color: #fff;
+.cert-button {
+    background: #0ea5e9;
+    color: #ffffff;
     text-decoration: none;
     padding: 0.5rem 1.2rem;
     border-radius: 6px;
@@ -778,10 +780,72 @@ body {
     white-space: nowrap;
 }
 
-.cert-btn:hover {
-    background: #3b92c7;
+.cert-button:hover {
+    background: #0284c7;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .completed-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .ongoing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .completed-grid,
+    .ongoing-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .cert-item {
+        padding: 1.5rem;
+        min-height: 200px;
+    }
+    
+    .cert-title {
+        font-size: 1rem;
+    }
+    
+    .cert-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .cert-button {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-item {
+        padding: 1.2rem;
+        min-height: 180px;
+    }
+    
+    .cert-title {
+        font-size: 0.95rem;
+    }
+    
+    .cert-provider {
+        font-size: 0.85rem;
+    }
+
+    .cert-section-title {
+        font-size: 1.3rem;
+    }
+}
+
 
 /* Achievements Section */
 .achievements {
