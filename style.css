@@ -385,6 +385,7 @@ body {
     background: var(--primary-color);
     color: #fff;
     border-color: var(--primary-color);
+    padding: .5px
 }
 
 .btn--primary:hover {
@@ -392,7 +393,7 @@ body {
     border-color: #138d75;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
-    padding: .5px
+    
 }
 
 .btn--outline {
