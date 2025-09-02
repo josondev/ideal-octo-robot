@@ -392,12 +392,14 @@ body {
     border-color: #138d75;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
+    padding: .5px
 }
 
 .btn--outline {
     background: transparent;
     color: #fff;
     border-color: rgba(255, 255, 255, 0.5);
+    padding: .5px
 }
 
 .btn--outline:hover {
