@@ -399,7 +399,10 @@ body {
     background: transparent;
     color: #fff;
     border-color: rgba(255, 255, 255, 0.5);
-    padding: .5px
+    padding: .5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .btn--outline:hover {
