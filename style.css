@@ -418,7 +418,7 @@ body {
     margin-bottom:2rem;
 }
 .btn--outline {
-    background: transparent;
+    background: rgba(22, 160, 133, 0.15);
     color: #fff;
     border-color: #16a085;   /* teal color to match primary */
     padding: 12px 24px;
