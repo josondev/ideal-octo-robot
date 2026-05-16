@@ -367,12 +367,18 @@ body {
 .hero-actions {
     display: flex;
     gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 /* Buttons */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 24px;
+    min-width: 150px;
+    height: 48px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
@@ -385,7 +391,6 @@ body {
     background: var(--primary-color);
     color: #fff;
     border-color: var(--primary-color);
-    padding: 12px 24px;
 }
 
 .btn--primary:hover {
@@ -396,39 +401,21 @@ body {
 
 .btn--outline {
     background: transparent;
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.5);
-    padding: 12px 24px;
-}
-
-.btn--outline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
-}
-
-.btn--sm {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom:2rem;
-}
-.btn--outline {
-    background: rgba(22, 160, 133, 0.15);
-    color: #fff;
-    border-color: #16a085;   /* teal color to match primary */
-    padding: 12px 24px;
-    color: #16a085;           /* teal text to match */
+    color: #16a085;
+    border-color: #16a085;
 }
 
 .btn--outline:hover {
     background: rgba(22, 160, 133, 0.15);
     border-color: #1abc9c;
     color: #1abc9c;
+}
+
+.btn--sm {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    min-width: auto;
+    height: auto;
 }
 
 /* Section Styles */
