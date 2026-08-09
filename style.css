@@ -405,6 +405,12 @@ body {
     border-color: #16a085;
 }
 
+.btn--outline {
+    background: transparent;
+    color: #16a085;
+    border-color: #16a085;
+}
+
 .btn--outline:hover {
     background: rgba(22, 160, 133, 0.15);
     border-color: #1abc9c;
