@@ -400,12 +400,6 @@ body {
 }
 
 .btn--outline {
-    background: #138d75;
-    color: #16a085;
-    border-color: #16a085;
-}
-
-.btn--outline {
     background: transparent;
     color: #16a085;
     border-color: #16a085;
